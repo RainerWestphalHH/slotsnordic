@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // NEUE FUNKTION ZUM KÜRZEN DER NAMEN
     function truncateName(name) {
-        if (name.length > 7) {
+        if (name.length > 5) {
             return name.substring(0, 3) + '***';
         }
         return name;

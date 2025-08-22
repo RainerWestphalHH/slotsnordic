@@ -74,7 +74,16 @@
         .leaderboard-item.top-2, .leaderboard-item.top-3 { background-color: #4a4a4a; color: #ffffff; font-weight: 700; }
         .leaderboard-item .rank { width: 10%; text-align: left; color: #ffffff; font-weight: 800; }
         .leaderboard-item.top-1 .rank { color: #000000; }
-        .leaderboard-item .name { width: 45%; text-align: left; font-weight: 600; }
+        .leaderboard-item .name {
+            width: 45%;
+            text-align: left;
+            font-weight: 600;
+            /* --- HIER WURDE DIE ÄNDERUNG VORGENOMMEN --- */
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            /* --- ENDE DER ÄNDERUNG --- */
+        }
         .leaderboard-item .xp { width: 20%; text-align: center; color: #FF0000; font-size: 0.9rem; }
         .leaderboard-item .prize { width: 25%; text-align: right; color: #FFD700; font-weight: 700; }
         .leaderboard-item.top-1 .prize { color: #000000; }

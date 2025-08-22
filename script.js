@@ -9,9 +9,9 @@ document.addEventListener('DOMContentLoaded', function() {
     const leaderboardList = document.getElementById('leaderboard-list');
     const countdownEl = document.getElementById('countdown-timer');
 
-    // NEUE FUNKTION ZUM KÜRZEN DER NAMEN
+    // Funktion zum Kürzen der Namen
     function truncateName(name) {
-        if (name.length > 5) {
+        if (name.length > 7) {
             return name.substring(0, 3) + '***';
         }
         return name;
@@ -66,15 +66,18 @@ document.addEventListener('DOMContentLoaded', function() {
                 prizeText = prizes[index - 3] || '';
             }
 
-            // HIER WIRD DER NAME GEKÜRZT
             const displayName = truncateName(entry.user.username);
 
             const listItem = document.createElement('li');
             listItem.className = `leaderboard-item ${topClass}`;
+            
+            // --- HIER WURDE DIE ÄNDERUNG VORGENOMMEN ---
+            // Alt: <span class="xp">$${(entry.wagered / 100).toFixed(2)}</span>
+            // Neu:
             listItem.innerHTML = `
                 <span class="rank">${rank}.</span>
                 <span class="name">${displayName}</span>
-                <span class="xp">$${(entry.wagered / 100).toFixed(2)}</span>
+                <span class="xp">${(entry.wagered / 100).toFixed(2)} XP</span>
                 <span class="prize">${prizeText}</span>
             `;
             leaderboardList.appendChild(listItem);
